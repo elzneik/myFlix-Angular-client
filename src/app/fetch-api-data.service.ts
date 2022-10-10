@@ -6,7 +6,8 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'YOUR_HOSTED_API_URL_HERE/';
+const apiUrl = 'https://protected-river-88909.herokuapp.com/';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,9 +41,9 @@ export class UserRegistrationService {
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe
-      (map(this.extractResponseData),
-      catchError(this.handleError)
+      }),
+    })
+    .pipe(map(this.extractResponseData), catchError(this.handleError)
     );
   }
 
@@ -170,7 +171,7 @@ export class UserRegistrationService {
 
 
 // Non-typed response extraction
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: any): any {
     const body = res;
     return body || { };
   }
