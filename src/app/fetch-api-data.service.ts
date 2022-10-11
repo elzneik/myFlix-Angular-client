@@ -8,6 +8,12 @@ import { map } from 'rxjs/operators';
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://protected-river-88909.herokuapp.com/';
 
+// Get Authorization token stored in local storage
+const token = localStorage.getItem('token');
+
+// Get Username stored in local storage
+const username = localStorage.getItem('user');
+
 @Injectable({
   providedIn: 'root'
 })
