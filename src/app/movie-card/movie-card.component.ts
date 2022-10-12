@@ -3,7 +3,7 @@ import { UserRegistrationService } from '../fetch-api-data.service'
 
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
-import { DescriptionComponent} from '../description/description.component';
+import { DescriptionComponent  } from '../description/description.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
