@@ -27,7 +27,8 @@ constructor(
     public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
-    public router: Router)
+    public router: Router
+    )
     { }
 
 ngOnInit(): void {

@@ -6,7 +6,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './description.component.html',
   styleUrls: ['./description.component.scss']
 })
-export class SynopsisComponent implements OnInit {
+export class DescriptionComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

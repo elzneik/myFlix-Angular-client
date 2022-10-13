@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service'
 
-import { GenreComponent } from '../genre/genre.component';
-import { DirectorComponent } from '../director/director.component';
+import { GenresComponent } from '../genres/genres.component';
+import { DirectorsComponent } from '../directors/directors.component';
 import { DescriptionComponent  } from '../description/description.component';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -48,7 +48,7 @@ isFav(id: string): boolean {
 }
 
 openGenreDialog(name: string, description: string): void {
-  this.dialog.open (GenreComponent, {
+  this.dialog.open (GenresComponent, {
     data: { 
       Name: name,
       Description: description,
@@ -58,7 +58,7 @@ openGenreDialog(name: string, description: string): void {
 }
 
 openDirectorDialog(name: string, bio: string, birthday: string): void {
-  this.dialog.open (DirectorComponent, {
+  this.dialog.open (DirectorsComponent, {
     data: {
       Name: name,
       Bio: bio,
