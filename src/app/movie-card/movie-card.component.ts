@@ -40,7 +40,7 @@ getFavouriteMovies() : void {
     this.favouriteMovies = resp;
     console.log(this.favouriteMovies);
     return this.favouriteMovies;
-  })
+  });
 }
 
 isFav(id: string): boolean {

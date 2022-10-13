@@ -10,6 +10,7 @@ export class DescriptionComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
+      Name: string;
       Description: string;
     }
   ) {}

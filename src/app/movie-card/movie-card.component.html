@@ -40,7 +40,7 @@
         <button
             mat-button
             *ngIf="!isFav(movie._id)"
-            (click)="addToFavoriteMovies(movie._id)"
+            (click)="addFavouriteMovie(movie._id)"
             color="primary"
             >
             Like
@@ -48,7 +48,7 @@
         <button
             mat-button
             *ngIf="isFav(movie._id)"
-            (click)="removeFromFavoriteMovies(movie._id)"
+            (click)="removeFavouriteMovie(movie._id)"
             color="primary"
             >
             Dislike
