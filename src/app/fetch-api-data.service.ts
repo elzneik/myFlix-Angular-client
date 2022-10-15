@@ -108,7 +108,7 @@ export class UserRegistrationService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + 'users/${username}/movies/${movieID}', {headers: new HttpHeaders(
+    return this.http.put(apiUrl + 'users/${username}/movies/${movieID}', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -138,7 +138,7 @@ export class UserRegistrationService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + 'users/${username}', {headers: new HttpHeaders(
+    return this.http.put(apiUrl + 'users/${username}', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })})
@@ -150,7 +150,7 @@ export class UserRegistrationService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + 'users/${username}/movies/${movieID}', {headers: new HttpHeaders(
+    return this.http.delete(apiUrl + 'users/${username}/movies/${movieID}', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
