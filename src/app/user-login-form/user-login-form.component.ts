@@ -23,6 +23,8 @@ export class UserLoginFormComponent implements OnInit {
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
+    /** @constructor */
+
 constructor(
     public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
@@ -34,7 +36,11 @@ constructor(
 ngOnInit(): void {
 }
 
-// This is the function responsible for sending the form inputs to the backend
+  /**
+   * This is the function responsible for sending the form inputs to the backend
+   * @function loginUser
+   */
+  
 loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
     // Logic for a successful user registration goes here! (To be implemented)
