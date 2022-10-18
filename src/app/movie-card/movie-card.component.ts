@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserRegistrationService } from '../fetch-api-data.service'
+import { FetchApiDataService } from '../fetch-api-data.service'
 
 import { GenresComponent } from '../genres/genres.component';
 import { DirectorsComponent } from '../directors/directors.component';
@@ -18,7 +18,7 @@ export class MovieCardComponent implements OnInit {
 
   /** @constructor */
   constructor(
-    public fetchApiData: UserRegistrationService,
+    public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
     ) { }
