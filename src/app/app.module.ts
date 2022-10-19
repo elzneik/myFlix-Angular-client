@@ -25,7 +25,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { DirectorsComponent } from './directors/directors.component';
 import { GenresComponent } from './genres/genres.component';
 import { DescriptionComponent } from './description/description.component';
-import { AddToFavoritesComponent } from './add-to-favorites/add-to-favorites.component';
+//import { AddToFavoritesComponent } from './add-to-favorites/add-to-favorites.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
     DirectorsComponent,
     GenresComponent,
     DescriptionComponent,
-    AddToFavoritesComponent,
+    // AddToFavoritesComponent,
     NavbarComponent,
     EditProfileComponent,
     ProfileComponent
