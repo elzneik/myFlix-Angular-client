@@ -17,14 +17,14 @@ export class NavbarComponent implements OnInit {
   /**
    * navigate to movie overview
    */
-  gotoMovies() : void {
+  goToMovies() : void {
     this.router.navigate(["movies"]);
   }
 
     /**
    * navigate to profile overview
    */
- gotoProfile() : void {
+ goToProfile() : void {
   this.router.navigate(["profile"]);
 }
 
