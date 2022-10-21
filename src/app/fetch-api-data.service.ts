@@ -26,7 +26,7 @@ export class FetchApiDataService {
   // api call user registration endpoint
   /**
    * @service POST to an API endpoint to register a new user
-   * @param {any} userData
+   * @param {any} userDetails
    * @returns a new user object in json format
    * @function userRegistration
    */
@@ -41,7 +41,7 @@ export class FetchApiDataService {
   //API call to login a user
   /**
    * @service POST to an API endpoint to login a user
-   * @param {any} userData
+   * @param {any} userDetails
    * @returns a user object in json format
    * @function userLogin
    * @returns
@@ -78,10 +78,9 @@ export class FetchApiDataService {
    */
   getSingleMovie(Title: any): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies/${Title}', {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}).pipe(
+    return this.http.get(apiUrl + 'movies/${Title}',
+    {headers: new HttpHeaders({Authorization: 'Bearer ' + token,})
+    }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
     );
@@ -122,7 +121,7 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + 'users/username', {headers: new HttpHeaders(
+    return this.http.get(apiUrl + 'users/${username}', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(

@@ -106,10 +106,10 @@ openDirectorDialog(name: string, bio: string, birthday: string): void {
    * @param description
    */
 
-openDescriptionDialog(name: string, description: string): void {
+openDescriptionDialog(title: string, description: string): void {
   this.dialog.open(DescriptionComponent, {
     data: {
-      Name: name,
+      Title: title,
       Description: description,
     },
     width: "500px",

@@ -1,58 +1,71 @@
 <app-navbar></app-navbar>
-<mat-card 
-    *ngFor="let movie of movies; let i=index;"
-    style="flex: 1 1 auto">
-
+<div class="movie-view" style="display: flex">
+  <mat-card *ngFor="let movie of movies; let i = index" style="flex: 1 1 auto">
     <mat-card-header>
-        <mat-card-title>{{movie.Title}}</mat-card-title>
-        <mat-card-subtitle>
-            <img 
-                src="{{movie.ImageURL}}"
-                alt="{{ movie.Title }}"
-                width="300"
-                height="400"
-                />
-            </mat-card-subtitle>
+      <mat-card-title>{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle
+        >Directed by:
+        <button
+          mat-button
+          (click)="
+            openDirectorDialog(
+              movie.Director.Name,
+              movie.Director.Bio,
+              movie.Director.Birth
+            )
+          "
+          color="primary"
+        >
+          {{ movie.Director.Name }}
+        </button>
+      </mat-card-subtitle>
     </mat-card-header>
+    <img
+      src="{{ movie.ImageURL }}"
+      alt="{{ movie.Title }}"
+      width="300"
+      height="400"
+    />
     <mat-card-actions>
-        <button
-            mat-stroked-button
-            (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
-            color="primary"
-            >
-            Genre
-        </button>
-        <button
-            mat-stroked-button
-            (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birthday)"
-            color="primary"
-            >
-            Director
-        </button>
-        <button
-            mat-stroked-button
-            (click)="openDescriptionDialog(movie.Name, movie.Description)"
-            color="primary"
-            >
-            Descritption        
-        </button>
+      <button
+        mat-button
+        (click)="openGenreDialog(
+            movie.Genre.Name, 
+            movie.Genre.Description
+            )"
+        color="primary"
+      >
+        Genre
+      </button>
 
-        <!-- Render add to or remove from favorites button depending on isFav -->
-        <button
-            mat-button
-            *ngIf="!isFav(movie._id)"
-            (click)="addFavouriteMovie(movie._id)"
-            color="primary"
-            >
-            Like
-        </button>
-        <button
-            mat-button
-            *ngIf="isFav(movie._id)"
-            (click)="removeFavouriteMovie(movie._id)"
-            color="primary"
-            >
-            Dislike
-        </button>
+      <button
+        mat-button
+        (click)="openDescriptionDialog(
+            movie.Title,
+            movie.Description
+            )"
+        color="primary"
+      >
+        Description
+      </button>
+
+      <!-- Render add to or remove from favorites button depending on isFav -->
+      <button
+        mat-button
+        *ngIf="!isFav(movie._id)"
+        (click)="addFavouriteMovie(movie._id)"
+        color="primary"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button
+        mat-button
+        *ngIf="isFav(movie._id)"
+        (click)="removeFavouriteMovie(movie._id)"
+        color="primary"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
     </mat-card-actions>
-</mat-card>
+  </mat-card>
+</div>
