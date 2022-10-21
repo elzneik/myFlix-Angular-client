@@ -102,7 +102,7 @@ openDirectorDialog(name: string, bio: string, birthday: string): void {
 
   /**
    * opens the user synopsis dialog from SynopsisComponent to displaying details
-   * @param title
+   * @param name
    * @param description
    */
 

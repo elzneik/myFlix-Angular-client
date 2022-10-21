@@ -1,17 +1,22 @@
-<mat-card>
-    <mat-card-title>
+<mat-card class="genre-dialog">
+    <mat-card-title class="genre-dialog-title">
         {{data.Name}}
     </mat-card-title>
-    <mat-dialog-content>
-        Birthday: {{ data.Description }}
+    <br />
+    <mat-dialog-content class="genre-dialog-content">
+        Description: 
+        {{ data.Description }}
     </mat-dialog-content>
-    <mat-card-actions>
+    <br />
+    <mat-card-actions class="genre-actions">
         <button
             mat-stroked-button
             aria-label="Close the genre button"
             color="primary"
+            mat-dialog-close
             >
         Close
         </button>
     </mat-card-actions>
 </mat-card>
+
