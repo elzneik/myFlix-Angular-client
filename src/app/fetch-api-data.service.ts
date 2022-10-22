@@ -121,7 +121,7 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.get(apiUrl + `users/${username}`, {headers: new HttpHeaders(
+    return this.http.get(apiUrl + `user/${username}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -129,6 +129,7 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );
   }
+
 
   //API Endpoint to add favorite movie to user's list
   /**
@@ -142,7 +143,7 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.put(apiUrl + `users/${username}/movies/${movieID}`, {headers: new HttpHeaders(
+    return this.http.post(apiUrl + `users/${username}/movies/${movieID}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -151,12 +152,13 @@ export class FetchApiDataService {
     );
   }
 
-
+  
   // API call for display favourite movie list of a user
-  getFavouriteMovie(): Observable<any> {
+  getFavouriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
-    const username = localStorage.getItem('Username');
+    const username = localStorage.getItem('user');
+    console.log(username);
     return this.http.get(apiUrl + `users/${username}/movies`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
@@ -179,10 +181,11 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     // Get username from localStorage for URLs
     const username = localStorage.getItem('user');
-    return this.http.put(apiUrl + `users/${username}`, {headers: new HttpHeaders(
+    return this.http.put(apiUrl + `users/${username}`, updateDetails, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })})
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
 
@@ -247,3 +250,4 @@ private handleError(error: HttpErrorResponse): any {
     'Something bad happened; please try again later.');
   }
 }
+

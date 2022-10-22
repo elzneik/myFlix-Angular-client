@@ -48,13 +48,15 @@ getMovies(): void {
    * @function getFavoriteMovies
    */
 
+
 getFavouriteMovies() : void {
-  this.fetchApiData.getFavouriteMovie().subscribe((resp: any) => {
+  this.fetchApiData.getFavouriteMovies().subscribe((resp: any) => {
     this.favouriteMovies = resp;
     console.log(this.favouriteMovies);
     return this.favouriteMovies;
   });
 }
+
 
   /**
    * checks if a movie is included in the user's list of favorite movies
@@ -62,9 +64,11 @@ getFavouriteMovies() : void {
    * @returns true, if the movie is a favorite move, else false
    */
 
+
 isFav(id: string): boolean {
   return this.favouriteMovies.includes(id);
 }
+
 
   /**
    * opens the user genre dialog from GenreComponent to displaying details
