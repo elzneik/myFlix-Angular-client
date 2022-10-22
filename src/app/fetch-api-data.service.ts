@@ -151,7 +151,6 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );
   }
-
   
   // API call for display favourite movie list of a user
   getFavouriteMovies(): Observable<any> {
